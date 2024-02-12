@@ -158,5 +158,12 @@ function printArray(){
     $("#ut").html(ut);
 }
 
+function slettBillett() {
+    billettArray.splice(0, billettArray.length);
+    $("#ut").html("");
+}
+
+
+
 
 

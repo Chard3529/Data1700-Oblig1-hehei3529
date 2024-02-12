@@ -129,10 +129,33 @@ function regBillett(){
             epost: personalia.epost
         };
         billettArray.push(billettObject);
-        console.log(billettObject);
+        printArray();
+    }
+}
+
+function printArray(){
+    let ut = "<table><tr>" +
+        "<th>Film</th>" +
+        "<th>Antall</th>" +
+        "<th>Fornavn</th>" +
+        "<th>Etternavn</th>" +
+        "<th>TelefonNr</th>" +
+        "<th>Epost</th>" +
+        "</tr>";
+
+    for (let object of billettArray) {
+        ut += "<tr>" +
+            "<td>" + object.film + "</td>" +
+            "<td>" + object.antall + "</td>" +
+            "<td>" + object.fornavn + "</td>" +
+            "<td>" + object.etternavn + "</td>" +
+            "<td>" + object.tlf + "</td>" +
+            "<td>" + object.epost + "</td>" +
+            "</tr>";
     }
 
-
+    ut += "</table>";
+    $("#ut").html(ut);
 }
 
 

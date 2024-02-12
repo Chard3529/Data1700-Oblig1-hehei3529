@@ -2,7 +2,9 @@ const billettArray = [];
 
 //Functions to get information from inputs
 function selectFilm() {
-    return $("#film").val();
+    const film = $("#film").val();
+    $("#film").val("NoChoice");
+    return film;
 }
 
 function getAntall() {

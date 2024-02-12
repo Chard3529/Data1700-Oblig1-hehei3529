@@ -7,38 +7,44 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 <body>
-<h1>Bestilling av kinobiletter</h1>
+<h1>Bestilling av kinobilletter</h1>
 Velg film:
 <label for="film"></label>
-    <select name="film" id="film" onChange="velgFilm()">
+    <select name="film" id="film">
         <option value="NoChoice">Velg film her</option>
         <option value="Casablanca">Casablanca</option>
         <option value="ApocalypseNow">Apocalypse Now</option>
         <option value="Anastasia">Anastasia</option>
     </select>
+<span id="filmFeil" style="color: red"></span>
 <br><br>
 
 Antall
 <input type="text" id="antall" size="1">
+<span id="antallFeil" style="color: red"></span>
 <br><br>
 
 Fornavn
 <input type="text" id="fornavn">
+<span id="fornavnFeil" style="color: red"></span>
 <br>
 Etternavn
 <input type="text" id="etternavn">
+<span id="etternavnFeil" style="color: red"></span>
 <br>
 TelefonNr
 <input type="text" id="tlf">
+<span id="tlfFeil" style="color: red"></span>
 <br>
 Epost
 <input type="text" id="epost">
+<span id="epostFeil" style="color: red"></span>
 <br><br>
-<input type="button" value="Kjøp Bilett" onclick="buyBilett()">
+<input type="button" value="Kjøp Bilett" onclick="regBillett()">
 <br>
 <h2>Alle biletter:</h2>
 <div id="ut"> </div>
-<input type="button" value="Slett alle biletter" onclick="slettBilett">
+<input type="button" value="Slett alle biletter" onclick="slettBillett()">
 
 
 

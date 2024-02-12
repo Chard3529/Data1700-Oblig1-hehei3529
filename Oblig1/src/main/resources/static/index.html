@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Oblig 1</title>
+    <script src="script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+<h1>Bestilling av kinobiletter</h1>
+Velg film:
+<label for="film"></label>
+    <select name="film" id="film" onChange="velgFilm()">
+        <option value="NoChoice">Velg film her</option>
+        <option value="Casablanca">Casablanca</option>
+        <option value="ApocalypseNow">Apocalypse Now</option>
+        <option value="Anastasia">Anastasia</option>
+    </select>
+<br><br>
+
+Antall
+<input type="text" id="antall" size="1">
+<br><br>
+
+Fornavn
+<input type="text" id="fornavn">
+<br>
+Etternavn
+<input type="text" id="etternavn">
+<br>
+TelefonNr
+<input type="text" id="tlf">
+<br>
+Epost
+<input type="text" id="epost">
+<br><br>
+<input type="button" value="Kjøp Bilett" onclick="buyBilett()">
+<br>
+<h2>Alle biletter:</h2>
+<div id="ut"> </div>
+<input type="button" value="Slett alle biletter" onclick="slettBilett">
+
+
+
+</body>
+</html>

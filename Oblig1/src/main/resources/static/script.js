@@ -41,8 +41,6 @@ function isEmptyCheck (a) {
 }
 
 function isValidEmail(string) {
-
-    //valid email RegExp taken from (https://www.w3resource.com/javascript/form/email-validation.php)
     const format =  /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
     if (string.match(format)) {
         return true;
@@ -50,9 +48,23 @@ function isValidEmail(string) {
     else {
         return false;
     }
-
 }
 
+//Phone number is 8 digits long check
+function isValidPhone(number){
+    let testString = number.toString();
+    let length = testString.length;
+    console.log(testString);
+    console.log(length);
+
+    if (length == 8){
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+//Function to clear the error message fields
 function clearWarnings(){
     $("#antallFeil").text("");
     $("#filmFeil").text("");
@@ -111,6 +123,10 @@ function regBillett(){
         noFails = false;
         $("#tlfFeil").text("Må fylle inn tall");
     }
+    else if(!isValidPhone(personalia.tlf)){
+        noFails = false;
+        $("#tlfFeil").text("TelefonNr må ha en lengde på 8 siffer");
+    }
 
     if (isEmptyCheck(personalia.epost)) {
         noFails = false;
@@ -131,6 +147,7 @@ function regBillett(){
             epost: personalia.epost
         };
         billettArray.push(billettObject);
+        clearWarnings();
         printArray();
     }
 }
@@ -160,6 +177,7 @@ function printArray(){
     $("#ut").html(ut);
 }
 
+//removes all objects inn the array
 function slettBillett() {
     billettArray.splice(0, billettArray.length);
     $("#ut").html("");
